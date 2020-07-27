@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;400&display=swap');
+
+body {
+    font-family: Barlow !important;
+}
+
+
+#currentIcon {
+    min-width: 90px !important;
+    min-height: 90px !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.weather-icon {
+    align-items: center;
+    object-fit: contain;
+    align-content: center;
+}
+
+#celsius {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px !important;
+}
+
+#block {
+    display: flex;
+    text-align: center;
+    padding-left: 10%;
+}
+
+#max-min {
+    /* display: block; */
+    padding: 18%;
+    margin: auto;
+    text-align: center;
+}
+
+#main-details {
+    border-radius: 16px 16px 0px 0px;
+    margin-top: -3%;
+    background: white;
+    position: relative;
+}
+
+.temperature-description {
+    margin-top: -20px !important;
+    text-align: center;
+    font-weight: 400;
+    z-index: 0;
+}
+
+.temperature-value {
+    font-size: 70px;
+    text-align: center;
+}
+
+#value-size {
+    font-size: 16px;
+}
+
+#font-description {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 10px;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+#icon-padding {
+    padding-bottom: 15%;
+}
+
+
+/* .dateTime {
+    font-family: Barlow;
+    font-weight: 100;
+    font-size: 16px;
+    text-align: center;
+    color: #999999;
+} */
+
+
+#date , #time {
+    /* display: inline !important; */
+    font-size: 18px;
+    text-align: center;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    color: #999999;
+}
+
+#place{
+    font-size: 18px;
+    margin-top: 4%;
+}
+
+#city {
+    text-align: center;
+    color: #0DA0EA;
+    border-radius: 0px 16px 0px 16px;
+    background-color: rgba(13, 159, 234, 0.08);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+}
