@@ -79,8 +79,8 @@ body {
 } */
 
 #proxDay1Id, #proxDay2Id, #proxDay3Id{
-    max-width: 24px;
-    max-height: 24px;
+    max-width: 44px;
+    max-height: 44px;
 }
 
 #date,

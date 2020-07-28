@@ -131,24 +131,19 @@ var dateTime = new Date();
 var weekday = new Array(7);
 weekday[6] = "Sun";
 weekday[0] = "Mon";
-weekday[1] = "Tuesday";
-weekday[2] = "Wednesday";
-weekday[3] = "Thursday";
-weekday[4] = "Friday";
-weekday[5] = "Saturday";
+weekday[1] = "Tue";
+weekday[2] = "Wed";
+weekday[3] = "Thu";
+weekday[4] = "Fri";
+weekday[5] = "Sat";
 
 var n = weekday[dateTime.getDay()];
 
 document.getElementById("date").innerHTML = `${daysToString()} ${dateTime.getDate()} ${monthsToString()} ${dateTime.getFullYear()}`;
 document.getElementById("time").innerHTML = `${getPmAm(dateTime)}`;
-document.getElementById("shortDay1").innerHTML = `${shortDay()},${dateTime.getDate()}`;
+document.getElementById("shortDay1").innerHTML = `${weekday[dateTime.getDay()]},${dateTime.getDate()}`;
 document.getElementById("shortDay2").innerHTML = `${weekday[dateTime.getDay() + 1 ]},${dateTime.getDate() + 1}`;
 document.getElementById("shortDay3").innerHTML = `${weekday[dateTime.getDay() + 2 ]},${dateTime.getDate() + 2}`;
-
-function shortDay() {
-    const weekday = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-    return weekday[dateTime.getDay()]
-}
 
 function daysToString() {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
