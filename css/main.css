@@ -3,6 +3,7 @@
 
 body {
     font-family: Barlow !important;
+    text-align: center;
 }
 
 
@@ -39,6 +40,8 @@ body {
     text-align: center;
 }
 
+
+
 #main-details {
     border-radius: 16px 16px 0px 0px;
     margin-top: -3%;
@@ -71,21 +74,17 @@ body {
     letter-spacing: 0.1em;
 }
 
-#icon-padding {
+/* #icon-padding {
     padding-bottom: 15%;
-}
-
-
-/* .dateTime {
-    font-family: Barlow;
-    font-weight: 100;
-    font-size: 16px;
-    text-align: center;
-    color: #999999;
 } */
 
+#proxDay1Id, #proxDay2Id, #proxDay3Id{
+    max-width: 24px;
+    max-height: 24px;
+}
 
-#date , #time {
+#date,
+#time {
     /* display: inline !important; */
     font-size: 18px;
     text-align: center;
@@ -94,7 +93,7 @@ body {
     color: #999999;
 }
 
-#place{
+#place {
     font-size: 18px;
     margin-top: 4%;
 }
@@ -107,5 +106,113 @@ body {
     width: 100%;
     height: 100%;
     text-align: center;
-
 }
+
+#boxShadow {
+    /* display: block; */
+    /* width: 95px; */
+    padding: 10%;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-sizing: content-box;
+}
+
+#padding{
+    padding: 20px;
+}
+
+#maxMin1,
+#maxMin2,
+#maxMin3 {
+    color: #999999;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+
+/* Carousel pero no llegue */
+
+/*
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+.carousel-container {
+  width: 100%; 
+  margin: auto;
+   min-height: 200px;
+  position: relative;
+}
+ @media screen and (max-width: 768px) {
+  .carousel-container {
+    width: 40%;
+  }
+} 
+@media screen and (max-width: 1024px) {
+  .carousel-container {
+    width: 83%;
+  }
+}
+.carousel-container .carousel-inner {
+  overflow: hidden;
+}
+.carousel-container .track {
+  display: inline-flex;
+  transition: transform 0.5s;
+}
+.carousel-container .card-container {
+  width: 50%;
+  flex-shrink: 0;
+  height: 100px;
+  padding-right: 0px;
+  box-sizing: border-box;
+}
+.carousel-container .card-container .card {
+  width: 50%;
+  height: 50%;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.nav button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.nav .prev {
+  left: -30px;
+  display: none;
+}
+.nav .prev.show {
+  display: block;
+}
+.nav .next {
+  right: -30px;
+}
+.nav .next.hide {
+  display: none;
+}
+
+.card > * {
+  flex: 1;
+}
+.card .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+.card .info {
+  flex-basis: 40px;
+  background: white;
+  color:black;
+  flex-grow: 0;
+  /* padding: 10px; 
+  box-sizing: border-box;
+}
+*/
