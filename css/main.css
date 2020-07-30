@@ -30,7 +30,8 @@ body {
 #block {
     display: flex;
     text-align: center;
-    padding-left: 13%;
+    padding-left: 8%;
+    margin: auto;
 }
 
 #max-min {
@@ -117,10 +118,6 @@ body {
     border-radius: 16px;
     /* box-sizing: content-box; */
 }
-
-/* #padding{
-    padding: 20px;
-} */
 
 #maxMin1,
 #maxMin2,

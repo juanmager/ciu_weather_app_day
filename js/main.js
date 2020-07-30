@@ -14,8 +14,6 @@ const sunriseValueElement = document.querySelector(".value-sunrise");
 const sunsetValueElement = document.querySelector(".value-sunset");
 const daytimeValueElement = document.querySelector(".value-daytime");
 const cityImageElement = document.querySelector(".img-fluid");
-const cityElement = document.getElementById("place");
-
 const dayOneIconElement = document.querySelector(".weather-iconDay1");
 const dayTwoIconElement = document.querySelector(".weather-iconDay2");
 const dayThrIconElement = document.querySelector(".weather-iconDay3");
@@ -23,6 +21,9 @@ const day1Element = document.querySelector(".nextDay1")
 const day2Element = document.querySelector(".nextDay2")
 const day3Element = document.querySelector(".nextDay3")
 const iconElement = document.querySelector(".weather-icon");
+const dtElement = document.querySelector(".value-daytime");
+const cityElement = document.getElementById("place");
+
 
 const weather = {};
 
@@ -62,7 +63,6 @@ function getWeather() {
 
 function displayWeather() {
 
-
     document.getElementById("maxMin1").innerHTML = `${weather.maxProxDay1Temperature}` + "°C↑" + " " + `${weather.minProxDay1Temperature}` + "°C↓";
     document.getElementById("maxMin2").innerHTML = `${weather.maxProxDay2Temperature}` + "°C↑" + " " + `${weather.minProxDay2Temperature}` + "°C↓";
     document.getElementById("maxMin3").innerHTML = `${weather.maxProxDay3Temperature}` + "°C↑" + " " + `${weather.minProxDay3Temperature}` + "°C↓";
@@ -73,6 +73,7 @@ function displayWeather() {
     temperatureDescriptionElement.innerHTML = weather.description;
     maxTemperatureElement.innerHTML = `${weather.max}°C↑`;
     minTemperatureElement.innerHTML = `${weather.min}°C↓`;
+    // dtElement.innerHTML = 
 
     var currentIcon = new Image();
     currentIcon.id = "currentIcon";
@@ -104,7 +105,7 @@ function displayWeather() {
     var sunriseTime = new Date(parseInt(weather.sunrise * 1000))
     sunriseValueElement.innerHTML = getPmAm(sunriseTime);
 
-    var daytime = new Date(parseInt(weather.daytime) * 1000)
+    var daytime = new Date(weather.daytime)
     daytimeValueElement.innerHTML = daytime.toString().substr(16, 5);
 }
 
@@ -129,21 +130,24 @@ function getPmAm(date) {
 
 var dateTime = new Date();
 var weekday = new Array(7);
-weekday[6] = "Sun";
-weekday[0] = "Mon";
-weekday[1] = "Tue";
-weekday[2] = "Wed";
-weekday[3] = "Thu";
-weekday[4] = "Fri";
-weekday[5] = "Sat";
+weekday[0] = "Sun";
+weekday[1] = "Mon";
+weekday[2] = "Tue";
+weekday[3] = "Wed";
+weekday[4] = "Thu";
+weekday[5] = "Fri";
+weekday[6] = "Sat";
 
 var n = weekday[dateTime.getDay()];
 
+
 document.getElementById("date").innerHTML = `${daysToString()} ${dateTime.getDate()} ${monthsToString()} ${dateTime.getFullYear()}`;
 document.getElementById("time").innerHTML = `${getPmAm(dateTime)}`;
-document.getElementById("shortDay1").innerHTML = `${weekday[dateTime.getDay()]},${dateTime.getDate()}`;
-document.getElementById("shortDay2").innerHTML = `${weekday[dateTime.getDay() + 1 ]},${dateTime.getDate() + 1}`;
-document.getElementById("shortDay3").innerHTML = `${weekday[dateTime.getDay() + 2 ]},${dateTime.getDate() + 2}`;
+
+for ( i = 1; i <= 3; i ++) {
+    var tomorrow = new Date(dateTime.getTime() + ((24 * 60 * 60 * 1000) * i ));    
+    document.getElementById(`shortDay${i}`).innerHTML =  `${weekday[tomorrow.getDay() ]}, ${[tomorrow.getDate() ]}`;
+}
 
 function daysToString() {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -160,7 +164,6 @@ function init() {
 }
 
 document.addEventListener('DOMContentLoaded', init());
-
 
 // Put night sky after 18PM
 
